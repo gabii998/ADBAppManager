@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.FXMLController">
+   <children>
+      <ChoiceBox fx:id="dispositivos" prefWidth="150.0" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="90.0" top="12.0" />
+         </StackPane.margin>
+      </ChoiceBox>
+      <Label fx:id="label" text="Dispositivo:" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets bottom="12.0" left="12.0" right="12.0" top="16.0" />
+         </StackPane.margin></Label>
+      <ListView fx:id="apps" prefHeight="267.0" prefWidth="600.0">
+         <StackPane.margin>
+            <Insets bottom="53.0" top="53.0" />
+         </StackPane.margin>
+      </ListView>
+      <Label prefHeight="53.0" prefWidth="600.0" text="Desactivar aplicaciones indebidas podria brickear su celular.El desarrolador no se hace responsable por los danos que esto pueda ocasionar." textAlignment="CENTER" wrapText="true" StackPane.alignment="BOTTOM_CENTER">
+         <StackPane.margin>
+            <Insets left="30.0" right="30.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="deviceInfo" StackPane.alignment="TOP_RIGHT">
+         <StackPane.margin>
+            <Insets right="12.0" top="16.0" />
+         </StackPane.margin>
+      </Label>
+   </children>
+</StackPane>
