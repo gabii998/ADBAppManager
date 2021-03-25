@@ -15,10 +15,10 @@ import java.util.Arrays;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 
 /**
  *
@@ -38,6 +38,21 @@ public class FXMLController {
         String javaVersion = System.getProperty("java.version");
         String javafxVersion = System.getProperty("javafx.version");
         getAdb();
+
+        apps.setOnMouseClicked(event -> {
+            String message="¿Seguro que desea deshabilitar este paquete?\n";
+            message+="Package Name: "+apps.getSelectionModel().getSelectedItem();
+            //message+="\nApplication Name:";
+
+            Alert alert=new Alert(Alert.AlertType.NONE,message, ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+            alert.showAndWait();
+
+            if (alert.getResult() == ButtonType.YES) {
+                disableApplication((String) dispositivos.getSelectionModel().getSelectedItem(),(String)apps.getSelectionModel().getSelectedItem());
+                getApplications((String) dispositivos.getSelectionModel().getSelectedItem());
+            }
+            System.out.println(apps.getSelectionModel().getSelectedItem());
+        });
         
         dispositivos.setOnAction((event) -> {
             //System.out.println("Pase por aca");

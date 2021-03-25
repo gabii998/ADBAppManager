@@ -27,26 +27,6 @@ public class Main extends Application {
         launch(args);
     }
 
-    /*@Override
-    public void start(Stage stage) throws Exception {
-        try {
-            String cmd = "adb shell pm list packages";
-            Runtime run = Runtime.getRuntime();
-            Process pr = run.exec(cmd);
-            pr.waitFor();
-            BufferedReader buf = new BufferedReader(new InputStreamReader(pr.getInputStream()));
-            String line = "";
-            while ((line=buf.readLine())!=null) {
-                System.out.println(line);
-            }       
-        } catch (IOException ex) {
-            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            //Logger.getLogger(Main.class.getName()).log(Level.WARNING,"Adb no esta instalado");
-            
-        } catch (InterruptedException ex) {
-            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }*/
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("scene.fxml"));
